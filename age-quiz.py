@@ -4,7 +4,14 @@ age being less than first age condition, this can be potentially corrected
 in future development of code"""
 
 #Request age input and store as integer
-age = int(input("Please enter your age (as a whole/integer number): "))
+while True:
+    try:
+        age = int(input("Please enter your age (as a whole/integer number): "))
+    except ValueError:
+        print("Value input not recognised as an integer, please try again")
+        continue
+    else:
+        break
 
 #Set maximum age as 100
 max_age = 100
